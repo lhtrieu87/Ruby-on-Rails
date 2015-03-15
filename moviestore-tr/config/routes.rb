@@ -1,4 +1,5 @@
 Moviestore::Application.routes.draw do
+  devise_for :users, path_names: { sign_in: :login, sign_out: :logout, sign_up: :register }
   resources :movies, only: [:show, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,7 +42,7 @@ Moviestore::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
