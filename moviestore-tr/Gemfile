@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 1.2'
 # Authentication
 gem 'devise'
 
+# Redis
+gem 'redis', '~> 3.0.1'
+# Because we will have some large replies ( such as SMEMBERS list command which will be used in our application ),
+# we use an alternative connection driver called hiredis which optimizes for speed, at the cost of portability.
+gem 'hiredis', '~> 0.4.5'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
